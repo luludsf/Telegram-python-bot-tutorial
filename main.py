@@ -3,14 +3,14 @@ import os
 
 bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 
-# Exemplo de comando inicial (/start)
+# Exemple of an initial command. (/start)
 
 
 @bot.message_handler(commands=['start'])
 def test(message):
     bot.send_message(message.chat.id, "Bem vindo ao meu bot")
 
-# Exemplo de comando echoando a mensagem
+# Exemple of a command echoing a massgem provided by the user.
 
 
 @bot.message_handler(commands=['echo'])
@@ -18,7 +18,7 @@ def test(message):
     messageText = message.text.replace("/echo", "")
     bot.send_message(message.chat.id, messageText)
 
-# Exemplo de comando enviando uma foto local do repositorio
+# Exemple of a command sending a picture to the user.
 
 
 @bot.message_handler(commands=['foto'])
