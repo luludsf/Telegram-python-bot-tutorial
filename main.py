@@ -28,5 +28,23 @@ def test(message):
     photo = open('photo.png', 'rb')
     bot.send_photo(message.chat.id, photo)
 
+    
+# Auxiliary methods 
+
+
+def get_url(url, key):
+    contents = requests.get(url).json()
+    url = contents[key]
+    return url
+
+
+def get_image_url(url, key):
+    allowed_extension = ['jpg', 'jpeg', 'png']
+    file_extension = ''
+    while file_extension not in allowed_extension:
+        url = get_url(url, key)
+        file_extension = re.search("([^.]*)$", url).group(1).lower()
+    
+    
 
 bot.polling()
