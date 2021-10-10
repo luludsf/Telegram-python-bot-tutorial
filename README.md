@@ -19,10 +19,10 @@ Tutorial de como fazer um bot para o telegram em python
 
 ### Comandos disponíveis até o momento
 
-<ol>
-<li>1.Start: comando inicial de start, retorna uma mesangem de bem vindo.</li>
-<li>2.Echo: comando de echo, retorna mensagem do usuário.</li>
-<li>3.Foto: comando de foto, retorna uma foto para o usuário.</li>
-</ol>
+<ul>
+<li>Start: comando inicial de start, retorna uma mesangem de bem vindo.</li>
+<li>Echo: comando de echo, retorna mensagem do usuário.</li>
+<li>Foto: comando de foto, retorna uma foto para o usuário.</li>
+</ul>
 
 
