@@ -1,5 +1,7 @@
 import telebot  # pip install pyTelegramBotAPI
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 

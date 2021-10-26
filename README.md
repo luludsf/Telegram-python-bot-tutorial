@@ -16,6 +16,13 @@ Tutorial de como fazer um bot para o telegram em python
 - Sinta-se livre para criar PRs com novos comandos
 
 ---------------------------------------
+## Rodar Localmente: 
+  1 - Criar um novo bot com o [@BotFather](https://telegram.me/BotFather) e adiquirir o token do bot. 
+  2 - Crie um arquivo com o nome .env com a seguinte variável de ambiente : ````BOT_TOKEN=seutoken````. 
+  3 - Instale as dependências através do comando : ````pip3 install -r requirements.txt````
+  4 - Execute ````python main.exe````. Abra o bot criado no telegram e assim só executar os comandos!
+
+---------------------------------------
 
 ### Comandos disponíveis até o momento
 
