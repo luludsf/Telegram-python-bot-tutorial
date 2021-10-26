@@ -46,6 +46,15 @@ def fox(message):
 def on_ping(message):
     bot.reply_to(message, "Still alive and kicking!")
     
+# Exemple of a command consuming a api to get a random cat image to the user
+@bot.message_handler(commands=['cat'])
+def cat(message):
+    url = get_image_url('https://some-random-api.ml/animal/cat', 'image')
+    chat_id = message.chat.id
+    bot.send_photo(chat_id, url)
+    
+    
+
 # Auxiliary methods 
 
 def get_url(url, key):
