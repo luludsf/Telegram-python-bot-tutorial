@@ -1,18 +1,18 @@
 import telebot  # pip install pyTelegramBotAPI
 import os
+import requests
+import re
 from dotenv import load_dotenv
 load_dotenv()
 
 bot = telebot.TeleBot(os.environ.get('BOT_TOKEN'))
 
 # Exemple of an initial command. (/start)
-
-
 @bot.message_handler(commands=['start'])
 def test(message):
     bot.send_message(message.chat.id, "Bem vindo ao meu bot")
 
-# Exemple of a command echoing a massgem provided by the user.
+# Exemple of a command echoing a message provided by the user.
 @bot.message_handler(commands=['echo'])
 def test(message):
     messageText = message.text.replace("/echo", "")
@@ -69,5 +69,6 @@ def get_image_url(url, key):
     while file_extension not in allowed_extension:
         url = get_url(url, key)
         file_extension = re.search("([^.]*)$", url).group(1).lower()
+    return url
     
 bot.polling()
