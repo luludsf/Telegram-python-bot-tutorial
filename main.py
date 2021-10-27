@@ -61,7 +61,17 @@ def dog(message):
     bot.send_photo(chat_id, url)
     
 
-# Auxiliary methods 
+# Example of a command with an api of random http messages with cats
+@bot.message_handler(commands=['http'])
+def httpcat(message):
+    messageText = message.text.replace("/http", "")
+    if not messageText: 
+        messageText = "404"
+        bot.send_message(message.chat.id, "Mande por exemplo catStatus 500")
+    url = "https://http.cat/"+ messageText.strip() +".jpg"
+    bot.send_photo(message.chat.id, url)
+
+# Auxiliary methods  
 def get_url(url, key):
     contents = requests.get(url).json()
     url = contents[key]
